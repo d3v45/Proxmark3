@@ -11,15 +11,23 @@ RFID stands for Radio-Frequency Identification. It's a technology that uses radi
 
 Extract the 7z file
 
-``cd proxmark3``
+```
+cd proxmark3
+```
 
 git clone
 
-``git clone https://github.com/RfidResearchGroup/proxmark3.git``
+```
+git clone https://github.com/RfidResearchGroup/proxmark3.git
+```
 
-``cp Makefile.platform.sample Makefile.platform``
+```
+cp Makefile.platform.sample Makefile.platform
+```
 
-``notepad Makefile.platform``
+```
+notepad Makefile.platform
+```
 
 Notice the lines;
 
@@ -35,42 +43,63 @@ PLATFORM=PM3GENERIC
 
 The compile commands in Linux are bundled into a simple make command. Now we just tell ProxSpace to compile the firmware and client software.
 
-``make clean && make -j8 all``
+```
+make clean && make -j8 all`
+```
 
 With your Proxmark3 connected and showing as a new virtual com port in the device manager, it’s time to flash the new firmware updates (bootloader and full image). Start with the bootloader by typing
 
-``./pm3-flash-bootrom``
-
+```
+./pm3-flash-bootrom
+```
 Now we need to flash the full image by typing…
 
-``./pm3-flash-fullimage``
+```
+./pm3-flash-fullimage
+```
 
 With the firmware updated to the current version, now it’s time to run the client. To do this just run the pm3 command in the /proxmark3 directory
 
-``pm3``
+```
+pm3
+```
 
-``exit``
+```
+exit
+```
 
-``cd ..``
+```
+cd ..
+```
 
-``ls -la``
+```
+ls -la
+```
 
-``notepad .bashrc``
+```
+notepad .bashrc
+```
 
 In this file add ``proxmark3/pm3`` in the last line
 
-``runme64``
+```
+runme64
+```
 
 
 **We are all set**
 
 Tune low frequency card
 
-``lf tune``
+```
+lf tune
+```
 
 tune high frequency card 
 
-``hf tune``
+```
+hf tune
+```
 
 
 Identify High Frequency cards
@@ -102,11 +131,15 @@ pm3 --> hw status
 
 we can add data by 
 
-``lf hid clone -r aaaaaa``
+```
+lf hid clone -r aaaaaa
+```
 
  to wipe data,
 
-``lf t5 wipe``
+```
+lf t5 wipe
+```
 
 
 
